@@ -1,0 +1,321 @@
+Script started on Mon 24 Jan 2022 03:03:02 PM CST
+[?1034hbash-4.2$ gir[Kt init
+Initialized empty Git repository in /home/u1/slc0070/Desktop/comp3500/project1/.git/
+bash-4.2$ touch cpu.c
+bash-4.2$ touch driver.c
+bash-4.2$ touch file.c
+bash-4.2$ git status
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	.gdbinit
+#	.gdbinit.swp
+#	commands.script
+#	cpu.c
+#	cpuinfo.txt
+#	driver.c
+#	file.c
+#	git.script
+#	interrupts.txt
+#	lspci.txt
+#	meminfo.txt
+#	simple
+#	simple.c
+#	task3.script
+nothing added to commit but untracked files present (use "git add" to track)
+bash-4.2$ git add *.c
+bash-4.2$ git status
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#	new file:   cpu.c
+#	new file:   driver.c
+#	new file:   file.c
+#	new file:   simple.c
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	.gdbinit
+#	.gdbinit.swp
+#	commands.script
+#	cpuinfo.txt
+#	git.script
+#	interrupts.txt
+#	lspci.txt
+#	meminfo.txt
+#	simple
+#	task3.script
+bash-4.2$ git commit -m 'Initial project 1'
+[master (root-commit) 677269a] Initial project 1
+ Committer: Sydney Lauren Carter <slc0070@tux052.eng.auburn.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 4 files changed, 26 insertions(+)
+ create mode 100644 cpu.c
+ create mode 100644 driver.c
+ create mode 100644 file.c
+ create mode 100644 simple.c
+bash-4.2$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	.gdbinit
+#	.gdbinit.swp
+#	commands.script
+#	cpuinfo.txt
+#	git.script
+#	interrupts.txt
+#	lspci.txt
+#	meminfo.txt
+#	simple
+#	task3.script
+nothing added to commit but untracked files present (use "git add" to track)
+bash-4.2$ rm cpu.c
+bash-4.2$ ls
+commands.script  cpuinfo.txt  driver.c	file.c	git.script  interrupts.txt  lspci.txt  meminfo.txt  simple  simple.c  task3.script
+bash-4.2$ git checkout -b master2
+D	cpu.c
+Switched to a new branch 'master2'
+bash-4.2$ git checkout cpu.c
+bash-4.2$ touch cpu2.c
+bash-4.2$ git add cpu2.c
+bash-4.2$ git commit -m 'cpu2 is added into master 2'
+[master2 f951f5c] cpu2 is added into master 2
+ Committer: Sydney Lauren Carter <slc0070@tux052.eng.auburn.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 cpu2.c
+bash-4.2$ git branch
+  master
+* master2
+bash-4.2$ ls
+commands.script  cpu2.c  cpu.c	cpuinfo.txt  driver.c  file.c  git.script  interrupts.txt  lspci.txt  meminfo.txt  simple  simple.c  task3.script
+bash-4.2$ git checkout master
+Switched to branch 'master'
+bash-4.2$ ls
+commands.script  cpu.c	cpuinfo.txt  driver.c  file.c  git.script  interrupts.txt  lspci.txt  meminfo.txt  simple  simple.c  task3.script
+bash-4.2$ git clone -b master [K/new_project1
+You must specify a repository to clone.
+
+usage: git clone [options] [--] <repo> [<dir>]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --progress            force progress reporting
+    -n, --no-checkout     don't create a checkout
+    --bare                create a bare repository
+    --mirror              create a mirror repository (implies bare)
+    -l, --local           to clone from a local repository
+    --no-hardlinks        don't use local hardlinks, always copy
+    -s, --shared          setup as shared repository
+    --recursive           initialize submodules in the clone
+    --recurse-submodules  initialize submodules in the clone
+    --template <template-directory>
+                          directory from which templates will be used
+    --reference <repo>    reference repository
+    -o, --origin <name>   use <name> instead of 'origin' to track upstream
+    -b, --branch <branch>
+                          checkout <branch> instead of the remote's HEAD
+    -u, --upload-pack <path>
+                          path to git-upload-pack on the remote
+    --depth <depth>       create a shallow clone of that depth
+    --single-branch       clone only one branch, HEAD or --branch
+    --separate-git-dir <gitdir>
+                          separate git dir from working tree
+    -c, --config <key=value>
+                          set config inside the new repository
+
+bash-4.2$ cd new_project1
+bash: cd: new_project1: No such file or directory
+bash-4.2$ git clone https://github.com/libgit2/libgit2
+Cloning into 'libgit2'...
+remote: Enumerating objects: 114866, done.[K
+remote: Counting objects:   0% (1/114866)[Kremote: Counting objects:   1% (1149/114866)[Kremote: Counting objects:   2% (2298/114866)[Kremote: Counting objects:   3% (3446/114866)[Kremote: Counting objects:   4% (4595/114866)[Kremote: Counting objects:   5% (5744/114866)[Kremote: Counting objects:   6% (6892/114866)[Kremote: Counting objects:   7% (8041/114866)[Kremote: Counting objects:   8% (9190/114866)[Kremote: Counting objects:   9% (10338/114866)[Kremote: Counting objects:  10% (11487/114866)[Kremote: Counting objects:  11% (12636/114866)[Kremote: Counting objects:  12% (13784/114866)[Kremote: Counting objects:  13% (14933/114866)[Kremote: Counting objects:  14% (16082/114866)[Kremote: Counting objects:  15% (17230/114866)[Kremote: Counting objects:  16% (18379/114866)[Kremote: Counting objects:  17% (19528/114866)[Kremote: Counting objects:  18% (20676/114866)[Kremote: Counting objects:  19% (21825/114866)[Kremote: Counting objects:  20% (22974/114866)[Kremote: Counting objects:  21% (24122/114866)[Kremote: Counting objects:  22% (25271/114866)[Kremote: Counting objects:  23% (26420/114866)[Kremote: Counting objects:  24% (27568/114866)[Kremote: Counting objects:  25% (28717/114866)[Kremote: Counting objects:  26% (29866/114866)[Kremote: Counting objects:  27% (31014/114866)[Kremote: Counting objects:  28% (32163/114866)[Kremote: Counting objects:  29% (33312/114866)[Kremote: Counting objects:  30% (34460/114866)[Kremote: Counting objects:  31% (35609/114866)[Kremote: Counting objects:  32% (36758/114866)[Kremote: Counting objects:  33% (37906/114866)[Kremote: Counting objects:  34% (39055/114866)[Kremote: Counting objects:  35% (40204/114866)[Kremote: Counting objects:  36% (41352/114866)[Kremote: Counting objects:  37% (42501/114866)[Kremote: Counting objects:  38% (43650/114866)[Kremote: Counting objects:  39% (44798/114866)[Kremote: Counting objects:  40% (45947/114866)[Kremote: Counting objects:  41% (47096/114866)[Kremote: Counting objects:  42% (48244/114866)[Kremote: Counting objects:  43% (49393/114866)[Kremote: Counting objects:  44% (50542/114866)[Kremote: Counting objects:  45% (51690/114866)[Kremote: Counting objects:  46% (52839/114866)[Kremote: Counting objects:  47% (53988/114866)[Kremote: Counting objects:  48% (55136/114866)[Kremote: Counting objects:  49% (56285/114866)[Kremote: Counting objects:  50% (57433/114866)[Kremote: Counting objects:  51% (58582/114866)[Kremote: Counting objects:  52% (59731/114866)[Kremote: Counting objects:  53% (60879/114866)[Kremote: Counting objects:  54% (62028/114866)[Kremote: Counting objects:  55% (63177/114866)[Kremote: Counting objects:  56% (64325/114866)[Kremote: Counting objects:  57% (65474/114866)[Kremote: Counting objects:  58% (66623/114866)[Kremote: Counting objects:  59% (67771/114866)[Kremote: Counting objects:  60% (68920/114866)[Kremote: Counting objects:  61% (70069/114866)[Kremote: Counting objects:  62% (71217/114866)[Kremote: Counting objects:  63% (72366/114866)[Kremote: Counting objects:  64% (73515/114866)[Kremote: Counting objects:  65% (74663/114866)[Kremote: Counting objects:  66% (75812/114866)[Kremote: Counting objects:  67% (76961/114866)[Kremote: Counting objects:  68% (78109/114866)[Kremote: Counting objects:  69% (79258/114866)[Kremote: Counting objects:  70% (80407/114866)[Kremote: Counting objects:  71% (81555/114866)[Kremote: Counting objects:  72% (82704/114866)[Kremote: Counting objects:  73% (83853/114866)[Kremote: Counting objects:  74% (85001/114866)[Kremote: Counting objects:  75% (86150/114866)[Kremote: Counting objects:  76% (87299/114866)[Kremote: Counting objects:  77% (88447/114866)[Kremote: Counting objects:  78% (89596/114866)[Kremote: Counting objects:  79% (90745/114866)[Kremote: Counting objects:  80% (91893/114866)[Kremote: Counting objects:  81% (93042/114866)[Kremote: Counting objects:  82% (94191/114866)[Kremote: Counting objects:  83% (95339/114866)[Kremote: Counting objects:  84% (96488/114866)[Kremote: Counting objects:  85% (97637/114866)[Kremote: Counting objects:  86% (98785/114866)[Kremote: Counting objects:  87% (99934/114866)[Kremote: Counting objects:  88% (101083/114866)[Kremote: Counting objects:  89% (102231/114866)[Kremote: Counting objects:  90% (103380/114866)[Kremote: Counting objects:  91% (104529/114866)[Kremote: Counting objects:  92% (105677/114866)[Kremote: Counting objects:  93% (106826/114866)[Kremote: Counting objects:  94% (107975/114866)[Kremote: Counting objects:  95% (109123/114866)[Kremote: Counting objects:  96% (110272/114866)[Kremote: Counting objects:  97% (111421/114866)[Kremote: Counting objects:  98% (112569/114866)[Kremote: Counting objects:  99% (113718/114866)[Kremote: Counting objects: 100% (114866/114866)[Kremote: Counting objects: 100% (114866/114866), done.[K
+remote: Compressing objects:   0% (1/31795)[Kremote: Compressing objects:   1% (318/31795)[Kremote: Compressing objects:   2% (636/31795)[Kremote: Compressing objects:   3% (954/31795)[Kremote: Compressing objects:   4% (1272/31795)[Kremote: Compressing objects:   5% (1590/31795)[Kremote: Compressing objects:   6% (1908/31795)[Kremote: Compressing objects:   7% (2226/31795)[Kremote: Compressing objects:   8% (2544/31795)[Kremote: Compressing objects:   9% (2862/31795)[Kremote: Compressing objects:  10% (3180/31795)[Kremote: Compressing objects:  11% (3498/31795)[Kremote: Compressing objects:  12% (3816/31795)[Kremote: Compressing objects:  13% (4134/31795)[Kremote: Compressing objects:  14% (4452/31795)[Kremote: Compressing objects:  15% (4770/31795)[Kremote: Compressing objects:  16% (5088/31795)[Kremote: Compressing objects:  17% (5406/31795)[Kremote: Compressing objects:  18% (5724/31795)[Kremote: Compressing objects:  19% (6042/31795)[Kremote: Compressing objects:  20% (6359/31795)[Kremote: Compressing objects:  21% (6677/31795)[Kremote: Compressing objects:  22% (6995/31795)[Kremote: Compressing objects:  23% (7313/31795)[Kremote: Compressing objects:  24% (7631/31795)[Kremote: Compressing objects:  25% (7949/31795)[Kremote: Compressing objects:  26% (8267/31795)[Kremote: Compressing objects:  27% (8585/31795)[Kremote: Compressing objects:  28% (8903/31795)[Kremote: Compressing objects:  29% (9221/31795)[Kremote: Compressing objects:  30% (9539/31795)[Kremote: Compressing objects:  31% (9857/31795)[Kremote: Compressing objects:  32% (10175/31795)[Kremote: Compressing objects:  33% (10493/31795)[Kremote: Compressing objects:  34% (10811/31795)[Kremote: Compressing objects:  35% (11129/31795)[Kremote: Compressing objects:  36% (11447/31795)[Kremote: Compressing objects:  37% (11765/31795)[Kremote: Compressing objects:  38% (12083/31795)[Kremote: Compressing objects:  39% (12401/31795)[Kremote: Compressing objects:  40% (12718/31795)[Kremote: Compressing objects:  41% (13036/31795)[Kremote: Compressing objects:  42% (13354/31795)[Kremote: Compressing objects:  43% (13672/31795)[Kremote: Compressing objects:  44% (13990/31795)[Kremote: Compressing objects:  45% (14308/31795)[Kremote: Compressing objects:  46% (14626/31795)[Kremote: Compressing objects:  47% (14944/31795)[Kremote: Compressing objects:  48% (15262/31795)[Kremote: Compressing objects:  49% (15580/31795)[Kremote: Compressing objects:  50% (15898/31795)[Kremote: Compressing objects:  51% (16216/31795)[Kremote: Compressing objects:  52% (16534/31795)[Kremote: Compressing objects:  53% (16852/31795)[Kremote: Compressing objects:  54% (17170/31795)[Kremote: Compressing objects:  55% (17488/31795)[Kremote: Compressing objects:  56% (17806/31795)[Kremote: Compressing objects:  57% (18124/31795)[Kremote: Compressing objects:  58% (18442/31795)[Kremote: Compressing objects:  59% (18760/31795)[Kremote: Compressing objects:  60% (19077/31795)[Kremote: Compressing objects:  61% (19395/31795)[Kremote: Compressing objects:  62% (19713/31795)[Kremote: Compressing objects:  63% (20031/31795)[Kremote: Compressing objects:  64% (20349/31795)[Kremote: Compressing objects:  65% (20667/31795)[Kremote: Compressing objects:  66% (20985/31795)[Kremote: Compressing objects:  67% (21303/31795)[Kremote: Compressing objects:  68% (21621/31795)[Kremote: Compressing objects:  69% (21939/31795)[Kremote: Compressing objects:  70% (22257/31795)[Kremote: Compressing objects:  71% (22575/31795)[Kremote: Compressing objects:  72% (22893/31795)[Kremote: Compressing objects:  73% (23211/31795)[Kremote: Compressing objects:  74% (23529/31795)[Kremote: Compressing objects:  75% (23847/31795)[Kremote: Compressing objects:  76% (24165/31795)[Kremote: Compressing objects:  77% (24483/31795)[Kremote: Compressing objects:  78% (24801/31795)[Kremote: Compressing objects:  79% (25119/31795)[Kremote: Compressing objects:  80% (25436/31795)[Kremote: Compressing objects:  81% (25754/31795)[Kremote: Compressing objects:  82% (26072/31795)[Kremote: Compressing objects:  83% (26390/31795)[Kremote: Compressing objects:  84% (26708/31795)[Kremote: Compressing objects:  85% (27026/31795)[Kremote: Compressing objects:  86% (27344/31795)[Kremote: Compressing objects:  87% (27662/31795)[Kremote: Compressing objects:  88% (27980/31795)[Kremote: Compressing objects:  89% (28298/31795)[Kremote: Compressing objects:  90% (28616/31795)[Kremote: Compressing objects:  91% (28934/31795)[Kremote: Compressing objects:  92% (29252/31795)[Kremote: Compressing objects:  93% (29570/31795)[Kremote: Compressing objects:  94% (29888/31795)[Kremote: Compressing objects:  95% (30206/31795)[Kremote: Compressing objects:  96% (30524/31795)[Kremote: Compressing objects:  97% (30842/31795)[Kremote: Compressing objects:  98% (31160/31795)[Kremote: Compressing objects:  99% (31478/31795)[Kremote: Compressing objects: 100% (31795/31795)[Kremote: Compressing objects: 100% (31795/31795), done.[K
+Receiving objects:   0% (1/114866)   Receiving objects:   1% (1149/114866)   Receiving objects:   2% (2298/114866)   Receiving objects:   3% (3446/114866)   Receiving objects:   4% (4595/114866)   Receiving objects:   5% (5744/114866)   Receiving objects:   6% (6892/114866)   Receiving objects:   7% (8041/114866)   Receiving objects:   8% (9190/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:   9% (10338/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  10% (11487/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  11% (12636/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  12% (13784/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  13% (14933/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  14% (16082/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  15% (17230/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  16% (18379/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  17% (19528/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  18% (20676/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  19% (21825/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  20% (22974/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  21% (24122/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  22% (25271/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  23% (26420/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  24% (27568/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  25% (28717/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  26% (29866/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  27% (31014/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  28% (32163/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  29% (33312/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  29% (34247/114866), 2.84 MiB | 5.67 MiB/s   Receiving objects:  30% (34460/114866), 12.20 MiB | 12.17 MiB/s   Receiving objects:  31% (35609/114866), 12.20 MiB | 12.17 MiB/s   Receiving objects:  32% (36758/114866), 12.20 MiB | 12.17 MiB/s   Receiving objects:  33% (37906/114866), 12.20 MiB | 12.17 MiB/s   Receiving objects:  34% (39055/114866), 12.20 MiB | 12.17 MiB/s   Receiving objects:  35% (40204/114866), 12.20 MiB | 12.17 MiB/s   Receiving objects:  36% (41352/114866), 12.20 MiB | 12.17 MiB/s   Receiving objects:  37% (42501/114866), 12.20 MiB | 12.17 MiB/s   Receiving objects:  38% (43650/114866), 12.20 MiB | 12.17 MiB/s   Receiving objects:  39% (44798/114866), 12.20 MiB | 12.17 MiB/s   Receiving objects:  40% (45947/114866), 12.20 MiB | 12.17 MiB/s   Receiving objects:  41% (47096/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  42% (48244/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  43% (49393/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  44% (50542/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  45% (51690/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  46% (52839/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  47% (53988/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  48% (55136/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  49% (56285/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  50% (57433/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  51% (58582/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  52% (59731/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  53% (60879/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  54% (62028/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  55% (63177/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  56% (64325/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  56% (64650/114866), 24.73 MiB | 16.45 MiB/s   Receiving objects:  57% (65474/114866), 36.65 MiB | 18.29 MiB/s   Receiving objects:  58% (66623/114866), 36.65 MiB | 18.29 MiB/s   Receiving objects:  59% (67771/114866), 36.65 MiB | 18.29 MiB/s   Receiving objects:  60% (68920/114866), 36.65 MiB | 18.29 MiB/s   Receiving objects:  61% (70069/114866), 36.65 MiB | 18.29 MiB/s   Receiving objects:  62% (71217/114866), 36.65 MiB | 18.29 MiB/s   Receiving objects:  63% (72366/114866), 36.65 MiB | 18.29 MiB/s   Receiving objects:  64% (73515/114866), 36.65 MiB | 18.29 MiB/s   Receiving objects:  65% (74663/114866), 36.65 MiB | 18.29 MiB/s   Receiving objects:  66% (75812/114866), 36.65 MiB | 18.29 MiB/s   Receiving objects:  67% (76961/114866), 36.65 MiB | 18.29 MiB/s   Receiving objects:  68% (78109/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  69% (79258/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  70% (80407/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  71% (81555/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  72% (82704/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  73% (83853/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  74% (85001/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  75% (86150/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  76% (87299/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  77% (88447/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  78% (89596/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  79% (90745/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  80% (91893/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  81% (93042/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  82% (94191/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  83% (95339/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  84% (96488/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  85% (97637/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  86% (98785/114866), 46.52 MiB | 18.57 MiB/s   Receiving objects:  86% (99165/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  87% (99934/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  88% (101083/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  89% (102231/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  90% (103380/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  91% (104529/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  92% (105677/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  93% (106826/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  94% (107975/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  95% (109123/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  96% (110272/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  97% (111421/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  98% (112569/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects:  99% (113718/114866), 53.75 MiB | 16.41 MiB/s   remote: Total 114866 (delta 81360), reused 114583 (delta 81096), pack-reused 0[K
+Receiving objects: 100% (114866/114866), 53.75 MiB | 16.41 MiB/s   Receiving objects: 100% (114866/114866), 57.44 MiB | 16.41 MiB/s, done.
+Resolving deltas:   0% (0/81360)   Resolving deltas:   1% (829/81360)   Resolving deltas:   2% (1635/81360)   Resolving deltas:   3% (2477/81360)   Resolving deltas:   4% (3260/81360)   Resolving deltas:   5% (4108/81360)   Resolving deltas:   6% (4884/81360)   Resolving deltas:   7% (5872/81360)   Resolving deltas:   8% (6546/81360)   Resolving deltas:   9% (7327/81360)   Resolving deltas:  10% (8225/81360)   Resolving deltas:  11% (8985/81360)   Resolving deltas:  12% (9898/81360)   Resolving deltas:  13% (10727/81360)   Resolving deltas:  14% (11600/81360)   Resolving deltas:  15% (12363/81360)   Resolving deltas:  16% (13579/81360)   Resolving deltas:  17% (14074/81360)   Resolving deltas:  18% (14706/81360)   Resolving deltas:  19% (15464/81360)   Resolving deltas:  20% (16277/81360)   Resolving deltas:  21% (17124/81360)   Resolving deltas:  22% (17905/81360)   Resolving deltas:  23% (18720/81360)   Resolving deltas:  24% (19539/81360)   Resolving deltas:  25% (20885/81360)   Resolving deltas:  26% (21178/81360)   Resolving deltas:  27% (21993/81360)   Resolving deltas:  28% (22802/81360)   Resolving deltas:  29% (23608/81360)   Resolving deltas:  30% (24410/81360)   Resolving deltas:  31% (25225/81360)   Resolving deltas:  32% (26138/81360)   Resolving deltas:  33% (26856/81360)   Resolving deltas:  34% (27670/81360)   Resolving deltas:  35% (28515/81360)   Resolving deltas:  36% (29425/81360)   Resolving deltas:  37% (30111/81360)   Resolving deltas:  38% (30934/81360)   Resolving deltas:  39% (31772/81360)   Resolving deltas:  40% (32548/81360)   Resolving deltas:  41% (33385/81360)   Resolving deltas:  42% (34177/81360)   Resolving deltas:  43% (35023/81360)   Resolving deltas:  44% (35893/81360)   Resolving deltas:  45% (36997/81360)   Resolving deltas:  46% (37436/81360)   Resolving deltas:  47% (38246/81360)   Resolving deltas:  48% (39084/81360)   Resolving deltas:  49% (39897/81360)   Resolving deltas:  50% (40699/81360)   Resolving deltas:  51% (41498/81360)   Resolving deltas:  52% (42311/81360)   Resolving deltas:  53% (43176/81360)   Resolving deltas:  54% (44166/81360)   Resolving deltas:  55% (44802/81360)   Resolving deltas:  56% (45563/81360)   Resolving deltas:  57% (46377/81360)   Resolving deltas:  58% (47317/81360)   Resolving deltas:  59% (48067/81360)   Resolving deltas:  60% (48874/81360)   Resolving deltas:  61% (49720/81360)   Resolving deltas:  62% (50539/81360)   Resolving deltas:  63% (51262/81360)   Resolving deltas:  63% (51936/81360)   Resolving deltas:  64% (52071/81360)   Resolving deltas:  65% (52885/81360)   Resolving deltas:  66% (53701/81360)   Resolving deltas:  67% (54517/81360)   Resolving deltas:  68% (55565/81360)   Resolving deltas:  69% (56240/81360)   Resolving deltas:  70% (57143/81360)   Resolving deltas:  71% (57902/81360)   Resolving deltas:  72% (58802/81360)   Resolving deltas:  73% (59461/81360)   Resolving deltas:  74% (60603/81360)   Resolving deltas:  75% (61049/81360)   Resolving deltas:  76% (61834/81360)   Resolving deltas:  78% (63613/81360)   Resolving deltas:  79% (64297/81360)   Resolving deltas:  79% (64765/81360)   Resolving deltas:  80% (65111/81360)   Resolving deltas:  81% (65906/81360)   Resolving deltas:  82% (66955/81360)   Resolving deltas:  83% (67697/81360)   Resolving deltas:  84% (68349/81360)   Resolving deltas:  85% (69212/81360)   Resolving deltas:  86% (69991/81360)   Resolving deltas:  87% (70789/81360)   Resolving deltas:  88% (71610/81360)   Resolving deltas:  89% (72414/81360)   Resolving deltas:  90% (73259/81360)   Resolving deltas:  91% (74038/81360)   Resolving deltas:  91% (74655/81360)   Resolving deltas:  92% (74855/81360)   Resolving deltas:  93% (75708/81360)   Resolving deltas:  94% (76508/81360)   Resolving deltas:  95% (77306/81360)   Resolving deltas:  96% (78108/81360)   Resolving deltas:  97% (78923/81360)   Resolving deltas:  98% (79768/81360)   Resolving deltas:  99% (80547/81360)   Resolving deltas: 100% (81360/81360)   Resolving deltas: 100% (81360/81360), done.
+Checking out files:   3% (390/11433)   Checking out files:   4% (458/11433)   Checking out files:   5% (572/11433)   Checking out files:   6% (686/11433)   Checking out files:   7% (801/11433)   Checking out files:   7% (823/11433)   Checking out files:   8% (915/11433)   Checking out files:   9% (1029/11433)   Checking out files:  10% (1144/11433)   Checking out files:  10% (1183/11433)   Checking out files:  11% (1258/11433)   Checking out files:  12% (1372/11433)   Checking out files:  13% (1487/11433)   Checking out files:  13% (1592/11433)   Checking out files:  14% (1601/11433)   Checking out files:  15% (1715/11433)   Checking out files:  16% (1830/11433)   Checking out files:  17% (1944/11433)   Checking out files:  18% (2058/11433)   Checking out files:  19% (2173/11433)   Checking out files:  20% (2287/11433)   Checking out files:  20% (2324/11433)   Checking out files:  21% (2401/11433)   Checking out files:  22% (2516/11433)   Checking out files:  22% (2609/11433)   Checking out files:  23% (2630/11433)   Checking out files:  24% (2744/11433)   Checking out files:  25% (2859/11433)   Checking out files:  25% (2869/11433)   Checking out files:  26% (2973/11433)   Checking out files:  27% (3087/11433)   Checking out files:  28% (3202/11433)   Checking out files:  28% (3293/11433)   Checking out files:  29% (3316/11433)   Checking out files:  30% (3430/11433)   Checking out files:  31% (3545/11433)   Checking out files:  32% (3659/11433)   Checking out files:  32% (3702/11433)   Checking out files:  33% (3773/11433)   Checking out files:  34% (3888/11433)   Checking out files:  35% (4002/11433)   Checking out files:  36% (4116/11433)   Checking out files:  36% (4134/11433)   Checking out files:  37% (4231/11433)   Checking out files:  38% (4345/11433)   Checking out files:  39% (4459/11433)   Checking out files:  39% (4545/11433)   Checking out files:  40% (4574/11433)   Checking out files:  41% (4688/11433)   Checking out files:  42% (4802/11433)   Checking out files:  42% (4908/11433)   Checking out files:  43% (4917/11433)   Checking out files:  44% (5031/11433)   Checking out files:  45% (5145/11433)   Checking out files:  46% (5260/11433)   Checking out files:  46% (5323/11433)   Checking out files:  47% (5374/11433)   Checking out files:  48% (5488/11433)   Checking out files:  49% (5603/11433)   Checking out files:  50% (5717/11433)   Checking out files:  50% (5749/11433)   Checking out files:  51% (5831/11433)   Checking out files:  52% (5946/11433)   Checking out files:  53% (6060/11433)   Checking out files:  54% (6174/11433)   Checking out files:  54% (6181/11433)   Checking out files:  55% (6289/11433)   Checking out files:  56% (6403/11433)   Checking out files:  57% (6517/11433)   Checking out files:  57% (6607/11433)   Checking out files:  58% (6632/11433)   Checking out files:  59% (6746/11433)   Checking out files:  60% (6860/11433)   Checking out files:  61% (6975/11433)   Checking out files:  61% (6979/11433)   Checking out files:  62% (7089/11433)   Checking out files:  63% (7203/11433)   Checking out files:  64% (7318/11433)   Checking out files:  64% (7352/11433)   Checking out files:  65% (7432/11433)   Checking out files:  66% (7546/11433)   Checking out files:  66% (7648/11433)   Checking out files:  67% (7661/11433)   Checking out files:  68% (7775/11433)   Checking out files:  69% (7889/11433)   Checking out files:  70% (8004/11433)   Checking out files:  70% (8051/11433)   Checking out files:  71% (8118/11433)   Checking out files:  72% (8232/11433)   Checking out files:  73% (8347/11433)   Checking out files:  73% (8408/11433)   Checking out files:  74% (8461/11433)   Checking out files:  75% (8575/11433)   Checking out files:  75% (8670/11433)   Checking out files:  76% (8690/11433)   Checking out files:  77% (8804/11433)   Checking out files:  78% (8918/11433)   Checking out files:  78% (8980/11433)   Checking out files:  79% (9033/11433)   Checking out files:  80% (9147/11433)   Checking out files:  81% (9261/11433)   Checking out files:  81% (9300/11433)   Checking out files:  82% (9376/11433)   Checking out files:  83% (9490/11433)   Checking out files:  84% (9604/11433)   Checking out files:  84% (9611/11433)   Checking out files:  85% (9719/11433)   Checking out files:  86% (9833/11433)   Checking out files:  86% (9910/11433)   Checking out files:  87% (9947/11433)   Checking out files:  88% (10062/11433)   Checking out files:  88% (10164/11433)   Checking out files:  89% (10176/11433)   Checking out files:  90% (10290/11433)   Checking out files:  91% (10405/11433)   Checking out files:  91% (10430/11433)   Checking out files:  92% (10519/11433)   Checking out files:  93% (10633/11433)   Checking out files:  93% (10678/11433)   Checking out files:  94% (10748/11433)   Checking out files:  95% (10862/11433)   Checking out files:  95% (10960/11433)   Checking out files:  96% (10976/11433)   Checking out files:  97% (11091/11433)   Checking out files:  98% (11205/11433)   Checking out files:  98% (11250/11433)   Checking out files:  99% (11319/11433)   Checking out files: 100% (11433/11433)   Checking out files: 100% (11433/11433), done.
+bash-4.2$ a[Kgit add r[KREADME
+fatal: pathspec 'README' did not match any files
+bash-4.2$ ls
+commands.script  cpu.c	cpuinfo.txt  driver.c  file.c  git.script  interrupts.txt  libgit2  lspci.txt  meminfo.txt  simple  simple.c  task3.script
+bash-4.2$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	.gdbinit
+#	.gdbinit.swp
+#	commands.script
+#	cpuinfo.txt
+#	git.script
+#	interrupts.txt
+#	libgit2/
+#	lspci.txt
+#	meminfo.txt
+#	simple
+#	task3.script
+nothing added to commit but untracked files present (use "git add" to track)
+bash-4.2$ touch r[KREADME
+bash-4.2$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	.gdbinit
+#	.gdbinit.swp
+#	README
+#	commands.script
+#	cpuinfo.txt
+#	git.script
+#	interrupts.txt
+#	libgit2/
+#	lspci.txt
+#	meminfo.txt
+#	simple
+#	task3.script
+nothing added to commit but untracked files present (use "git add" to track)
+bash-4.2$ git add README
+bash-4.2$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   README
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	.gdbinit
+#	.gdbinit.swp
+#	commands.script
+#	cpuinfo.txt
+#	git.script
+#	interrupts.txt
+#	libgit2/
+#	lspci.txt
+#	meminfo.txt
+#	simple
+#	task3.script
+bash-4.2$ git diff
+[?1h=[K[?1l>bash-4.2$ git diff README
+[?1h=[K[?1l>bash-4.2$ go[Kit commit
+[?1049h[?1h=[1;45r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[45;1H".git/COMMIT_EDITMSG" 26L, 562C[2;1H# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Committer: Sydney Lauren Carter <slc0070@tux052.eng.auburn.edu>
+#
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#[7Cnew file:   README
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#[7C.gdbinit
+#[7C.gdbinit.swp
+#[7Ccommands.script
+#[7Ccpuinfo.txt
+#[7Cgit.script
+#[7Cinterrupts.txt
+#[7Clibgit2/
+#[7Clspci.txt
+#[7Cmeminfo.txt
+#[7Csimple
+#[7Ctask3.script
+[94m~                                                                                                                                                                                 [28;1H~                                                                                                                                                                                 [29;1H~                                                                                                                                                                                 [30;1H~                                                                                                                                                                                 [31;1H~                                                                                                                                                                                 [32;1H~                                                                                                                                                                                 [33;1H~                                                                                                                                                                                 [34;1H~                                                                                                                                                                                 [35;1H~                                                                                                                                                                                 [36;1H~                                                                                                                                                                                 [37;1H~                                                                                                                                                                                 [38;1H~                                                                                                                                                                                 [39;1H~                                                                                                                                                                                 [40;1H~                                                                                                                                                                                 [41;1H~                                                                                                                                                                                 [42;1H~                                                                                                                                                                                 [43;1H~                                                                                                                                                                                 [44;1H~                                                                                                                                                                                 [1;1H[?12l[?25h[?25l[m[45;1H[1m-- INSERT --[m[45;13H[K[1;1H[?12l[?25h[?25lt[?12l[?25h[?25l [?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25lg[?12l[?25h[2;6H[3;6H
+#
+
+#[9;6H[12;2H[15;2H
+
+#[20;2H
+
+#[25;2H
+#O O [?25l[26;9H[K[27;1H        task3.script[27;21H[K[27;1H[?12l[?25h[?25l[26;9Htask3.script
+[94m~                                                                                                                                                                                 [26;2H[?12l[?25h[?25l[m [?12l[?25h[23;1H[19;1H[2;1H[1;1H[14;1H[26;1HO [25;1H[24;1H[21;1H[17;1H[16;1H[15;1H[14;1H[12;1H[9;1H
+
+
+
+
+
+
+
+
+
+
+
+
+[26;1H[25;1H[24;1H[23;1H[22;1H[21;1H[20;1H[19;1H[18;1H[17;1H[16;1H[15;1H[14;1H[13;1H[12;1H
+
+
+
+
+
+
+
+
+
+
+
+
+
+[25;1H[24;1H[22;1H[21;1H[20;1H[19;1H[18;1H[17;1H[15;1H[14;1H[13;1H[12;1H[11;1H[10;1H[9;1H[8;1H[7;1H[6;1H[5;1H[4;1H[3;1H[2;1H[1;1H
+
+
+
+
+
+
+
+
+
+
+[16;1H
+
+
+
+
+
+
+
+
+
+[?25le[?12l[?25h[?25lx[?12l[?25h[?25li[?12l[?25h[?25lt[?12l[?25h[?25l[26;9H[K[27;1H        task3.script[27;21H[K[27;1H[?12l[?25h[?25l[26;9Htask3.script
+[94m~                                                                                                                                                                                 [26;5H[?12l[?25h[?25l[m [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[25;17Htask3.script
+[94m~                                                                                                                                                                                 [25;15H[?12l[?25h[?25l[m[25;17H[K[26;1H        task3.script[26;21H[K[26;1H[?12l[?25h[8Ctask3.script[?25l#[?12l[?25h[7Ctask3.scrip[?25l[26;20H[K[27;1Ht[27;2H[K[27;1H[?12l[?25h[?25l[26;20Ht
+[94m~                                                                                                                                                                                 [26;20H[?12l[?25h[mt[?25l[27;1H[K[27;1H[?12l[?25h[?25le[?12l[?25h[?25lx[?12l[?25h[?25li[?12l[?25h[?25lt[?12l[?25h[?25l[28;1H[K[28;1H[?12l[?25h[?25l[94m~                                                                                                                                                                                 [27;5H[?12l[?25h[?25l[m[27;4H[K[27;4H[?12l[?25h[?25l[27;3H[K[27;3H[?12l[?25h[?25l[27;2H[K[27;2H[?12l[?25h[?25l[27;1H[K[27;1H[?12l[?25h[?25lq[?12l[?25h[?25l[28;1H[K[28;1H[?12l[?25h[?25l[94m~                                                                                                                                                                                 [27;2H[?12l[?25h[?25l[m[27;1H[K[27;1H[?12l[?25h[?25lc[?12l[?25h[?25lh[?12l[?25h[?25la[?12l[?25h[?25ln[?12l[?25h[?25lg[?12l[?25h[?25le[?12l[?25h[?25ls[?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l[28;1H[K[28;1H[?12l[?25h[?25l[29;1H[K[29;1H[?12l[?25h[?25l[30;1H[K[30;1H[?12l[?25h[?25l[31;1H[K[31;1H[?12l[?25h[?25l[32;1H[K[32;1H[?12l[?25h[?25l[33;1H[K[33;1H[?12l[?25h[?25l[34;1H[K[34;1H[?12l[?25h[?25l[35;1H[K[35;1H[?12l[?25h[?25l[36;1H[K[36;1H[?12l[?25h[?25l[37;1H[K[37;1H[?12l[?25h[?25l[38;1H[K[38;1H[?12l[?25h[?25l[39;1H[K[39;1H[?12l[?25h[?25l[40;1H[K[40;1H[?12l[?25h[?25l[41;1H[K[41;1H[?12l[?25h[?25l[42;1H[K[42;1H[?12l[?25h[?25l[43;1H[K[43;1H[?12l[?25h[?25l[44;1H[K[44;1H[?12l[?25h[?25l[1;44r[44;1H
+[1;45r[44;1H[?12l[?25h[?25l[94m~                                                                                                                                                                                 [43;1H[?12l[?25h[?25l~                                                                                                                                                                                 [42;1H[?12l[?25h[?25l~                                                                                                                                                                                 [41;1H[?12l[?25h[?25l~                                                                                                                                                                                 [40;1H[?12l[?25h[?25l~                                                                                                                                                                                 [39;1H[?12l[?25h[?25l~                                                                                                                                                                                 [38;1H[?12l[?25h[?25l~                                                                                                                                                                                 [37;1H[?12l[?25h[?25l~                                                                                                                                                                                 [36;1H[?12l[?25h[?25l~                                                                                                                                                                                 [35;1H[?12l[?25h[?25l~                                                                                                                                                                                 [34;1H[?12l[?25h[?25l~                                                                                                                                                                                 [33;1H[?12l[?25h[?25l~                                                                                                                                                                                 [32;1H[?12l[?25h[?25l~                                                                                                                                                                                 [31;1H[?12l[?25h[?25l~                                                                                                                                                                                 [30;1H[?12l[?25h[?25l~                                                                                                                                                                                 [29;1H[?12l[?25h[?25l~                                                                                                                                                                                 [28;1H[?12l[?25h[?25l~                                                                                                                                                                                 [27;1H[?12l[?25h[?25l~                                                                                                                                                                                 [26;8H[?12l[?25h[?25l[m[26;7H[K[26;7H[?12l[?25h[?25l[26;6H[K[26;6H[?12l[?25h[?25l[26;5H[K[26;5H[?12l[?25h[?25l[26;4H[K[26;4H[?12l[?25h[?25l[26;3H[K[26;3H[?12l[?25h[?25l[26;2H[K[26;2H[?12l[?25h[?25l[26;1H[K[26;1H[?12l[?25h[?25l[94m~                                                                                                                                                                                 [25;21H[?12l[?25h[?25l[mz[?12l[?25h[?25l[25;21H[K[25;21H[?12l[?25h[?25lz[?12l[?25h[?25l[26;1H[K[26;1H[?12l[?25h[?25l[94m~                                                                                                                                                                                 [25;22H[?12l[?25h[?25l[m[25;21H[K[25;21H[?12l[?25h[?25l[26;1H[K[26;1H[?12l[?25h[?25lq[?12l[?25h[?25l[27;1H[K[27;1H[?12l[?25h[?25l[34m^Z[?12l[?25h[?25l[m[27;1H[K[27;1H[?12l[?25h[?25lq[?12l[?25h[?25l[28;1H[K[28;1H[?12l[?25h[?25lq[?12l[?25h[?25l[29;1H[K[29;1H[?12l[?25h[?25lq[?12l[?25h[?25l[30;1H[K[30;1H[?12l[?25h[?25lq[?12l[?25h[?25l[31;1H[K[31;1H[?12l[?25h[?25lq[?12l[?25h[?25l[32;1H[K[32;1H[?12l[?25h[?25lq[?12l[?25h[?25l[33;1H[K[33;1H[?12l[?25h[?25lq[?12l[?25h[?25l[34;1H[K[34;1H[?12l[?25h[?25lq[?12l[?25h[?25l[35;1H[K[35;1H[?12l[?25h[?25lq[?12l[?25h[?25l[36;1H[K[36;1H[?12l[?25h[?25lq[?12l[?25h[?25l[37;1H[K[37;1H[?12l[?25h[?25lq[?12l[?25h[?25l[38;1H[K[38;1H[?12l[?25h[?25lq[?12l[?25h[?25l[39;1H[K[39;1H[?12l[?25h[?25lq[?12l[?25h[?25l[40;1H[K[40;1H[?12l[?25h[?25lq[?12l[?25h[?25l[41;1H[K[41;1H[?12l[?25h[?25lq[?12l[?25h[?25l[42;1H[K[42;1H[?12l[?25h[?25lq[?12l[?25h[?25l[43;1H[K[43;1H[?12l[?25h[?25lq[?12l[?25h[?25l[44;1H[K[44;1H[?12l[?25h[?25lq[?12l[?25h[?25l[1;44r[44;1H
+[1;45r[44;1H[?12l[?25h[?25lq[?12l[?25h[?25l[1;44r[44;1H
+[1;45r[44;1H[?12l[?25h[?25l[94m~                                                                                                                                                                                 [43;2H[?12l[?25h[?25l[m[43;1H[K[43;1H[?12l[?25h[?25l[94m~                                                                                                                                                                                 [42;2H[?12l[?25h[?25l[m[42;1H[K[42;1H[?12l[?25h[?25l[94m~                                                                                                                                                                                 [41;2H[?12l[?25h[?25l[m[41;1H[K[41;1H[?12l[?25h[?25l[94m~                                                                                                                                                                                 [40;2H[?12l[?25h[?25l[m[40;1H[K[40;1H[?12l[?25h[?25l[94m~                                                                                                                                                                                 [39;2H[?12l[?25h[?25l[m[39;1H[K[39;1H[?12l[?25h[?25l[94m~                                                                                                                                                                                 [38;
